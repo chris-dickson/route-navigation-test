@@ -28,11 +28,12 @@
  */
 
 
-export class Welcome {
+export class Documents {
   heading = 'Search for Documents';
   query;
+  page;
 
   submit() {
-    alert(this.query);
+    alert('query = ' + this.query + ',page = ' + this.page);
   }
 }

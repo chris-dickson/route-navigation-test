@@ -30,12 +30,23 @@
 <template>
   <section class="au-animate">
     <h2>${heading}</h2>
+
+    <!-- Query Box -->
     <form role="form" submit.delegate="submit()">
       <div class="form-group">
-        <label for="fn">First Name</label>
+        <label for="fn">Group Query</label>
         <input type="text" value.bind="query" class="form-control" id="fn">
       </div>
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
+
+    <!-- Placeholder page selection -->
+    <select value.bind="page">
+      <option></option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+    </select>
   </section>
 </template>

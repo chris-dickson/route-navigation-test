@@ -28,11 +28,12 @@
  */
 
 
-export class Welcome {
+export class Groups {
   heading = 'Search for Groups';
   query;
+  page;
 
   submit() {
-    alert(this.query);
+    alert('query = ' + this.query + ',page = ' + this.page);
   }
 }
