@@ -3,6 +3,7 @@ import 'bootstrap';
 export function configure(aurelia) {
   aurelia.use
     .standardConfiguration()
+    .history()
     .developmentLogging();
 
   //Uncomment the line below to enable animation.
