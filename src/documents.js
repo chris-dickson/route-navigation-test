@@ -72,6 +72,7 @@ export class Documents {
   }
 
   activate(params) {
+    // console.debug(`activate is running with params: ${JSON.stringify(params)}`);
     this.params = params;
     if (params.q) {
       this.query = params.q;
