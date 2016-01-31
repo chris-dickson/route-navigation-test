@@ -28,6 +28,7 @@
  */
 import { inject } from 'aurelia-framework';
 import {Router} from 'aurelia-router';
+import {activationStrategy} from 'aurelia-router';
 
 @inject(Router)
 export class Documents {
@@ -47,6 +48,10 @@ export class Documents {
     this.router = router;
   }
 
+  determineActivationStrategy() {
+    return activationStrategy.replace;
+  }
+
   buildState() {
     this.state = {
       q: this.query
@@ -58,7 +63,7 @@ export class Documents {
 
   submit() {
     this.buildState();
-    this.router.navigateToRoute('documents', this.state, {replace: true});
+    this.router.navigateToRoute('documents', this.state);
   }
 
 
@@ -67,6 +72,7 @@ export class Documents {
   }
 
   activate(params) {
+    // console.debug(`activate is running with params: ${JSON.stringify(params)}`);
     this.params = params;
     if (params.q) {
       this.query = params.q;
